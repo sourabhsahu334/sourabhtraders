@@ -1,101 +1,177 @@
-import Image from "next/image";
+
+// pages/index.js
+'use client';
+
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import "./globals.css"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div>
+      <Head>
+        <title>Responsive Personal Portfolio Website</title>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Header Section */}
+      <header className="header">
+        <div className="user">
+          <Image 
+            src="/IMG-20220121-WA0001.jpg" 
+            alt="Mukesh Sahu" 
+            width={100} 
+            height={100} 
+            className="profile-image" 
+          />
+          <h3 className="name">Mukesh Sahu</h3>
+          <p className="post">Proprietor of Sourabh Traders</p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <nav className="navbar">
+          <ul>
+            <li><Link href="#home">home</Link></li>
+            <li><Link href="#portfolio">portfolio</Link></li>
+            <li><Link href="#contact">contact</Link></li>
+            <li><Link href="#about">about us</Link></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Home Section */}
+      <section id="home" className="home">
+        <h3>HI THERE!</h3>
+        <h1>
+          <span>SOURABH TRADERS</span>
+        </h1>
+        <p>
+          I am Mukesh Sahu, Proprietor of Sourabh Traders, Narsinghgarh (M.P.). <br />
+          We specialize in garlic, onion, soybean, wheat, and chana. We procure the best quality
+          materials from farmers at Narsinghgarh Mandi and export these goods to other states.
+        </p>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="about">
+        <h1 className="heading">
+          <span>About</span> Us
+        </h1>
+
+        <div className="row">
+          <div className="info">
+            <div className="counter">
+              <div className="box">
+                <span>15+</span>
+                <h3>years of experience in the business</h3>
+              </div>
+              <div className="box">
+                <span>Supply</span>
+                <h3>Over thousands of quintals</h3>
+                <h3>Best quality material</h3>
+              </div>
+              <div className="box">
+                <span>Turnover</span>
+                <h3>Significant yearly growth</h3>
+              </div>
+              <div className="box">
+                <span>Clients</span>
+                <h3>Across different states</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="portfolio">
+        <h1 className="heading">
+          My <span>Portfolio</span>
+        </h1>
+
+        <div className="boxContainer">
+          {[1, 2, 3, 4, 5, 6,7,8].map((num) => (
+            <div key={num} className="box">
+              <Image
+                src={`/IMG-20220121-WA000${num + 1}.jpg`}
+                alt="Portfolio Image"
+                width={300}
+                height={300}
+              />
+            </div>
+          ))}
+        </div>
+
+        <style jsx>{`
+          .header .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .header .user .profile-image {
+            border-radius: 50%;
+            margin-bottom: 10px;
+          }
+
+          .boxContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+          }
+
+          .box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          @media (min-width: 768px) {
+            .boxContainer {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .boxContainer {
+              grid-template-columns: 1fr;
+            }
+          }
+        `}</style>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact">
+        <h1 className="heading">
+          <span>Contact</span> Me
+        </h1>
+
+        <div className="row">
+          <div className="content">
+            <h3 className="title">Contact Info</h3>
+            <div className="info">
+              <h3>
+                <i className="fas fa-envelope"></i> sourabhsahu339@gamil.com
+              </h3>
+              <h3>
+                <i className="fas fa-phone"></i> 9826520564
+              </h3>
+              <h3>
+                <i className="fas fa-phone"></i> 9826520554
+              </h3>
+              <h3>
+                <i className="fas fa-map-marker-alt"></i> Narsinghgarh - M.P. - 465669
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
