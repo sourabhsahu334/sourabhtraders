@@ -11,8 +11,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Responsive Personal Portfolio Website</title>
-        <link
+      <title>Sourabh Traders NGH, M.P.</title>
+        <meta
+          name="description"
+          content="Sourabh Traders goods and merchants, garlic and onion seller"
+        />
+                <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         />
